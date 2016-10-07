@@ -23,7 +23,7 @@ public class TxtReader {
         boolean counter = false;
 
         List<String> oneScenario = new ArrayList<>();
-        List<List<String>> allScenarios = new ArrayList<List<String>>();
+        List<List<String>> allScenarios = new ArrayList<>();
 
         while((line = bufferedReader.readLine())!= null){
             boolean newScenario = line.trim().split(" ", 2)[0].equals("Scenario");
@@ -40,7 +40,7 @@ public class TxtReader {
             else if(newScenario && counter){
                 //save full current scenario to the list and clear current scenario to save the next
                 allScenarios.add(oneScenario);
-                oneScenario.clear();
+                oneScenario = new ArrayList<>();
                 oneScenario.add(line);
             }
         }
